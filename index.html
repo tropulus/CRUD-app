@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title>CRUD App</title>
@@ -8,23 +8,46 @@
 </head>
 <body>
   <div class="wrapper">
-<button onClick="window.location='register.html';">Register New Employee</button>
-<button onclick="fireEmployee()">Fire employee</button>
-<h3>Employees</h3>
-<hr>
+<div style='height: 45px; background: #435D7D;'>
+  <h3 style='float:left;margin: 5px;font-family: sans-serif; margin-left: 17px; margin-bottom: 0px; color: white;font-size:30px;'>Manage <b>Employees</b></h3>
+  <button onClick="window.location='register.html';" style="margin: 5px;margin-bottom:0px;height:80%;color:white;background:#5CB85C; float: right;">Add New Employee</button>
+  <button onclick="fireEmployee()" style="height:80%; color:white ;background:#D9534F;margin: 5px;margin-bottom:0px; margin-right:0px; float:right;">Delete</button>
+</div>
 <div>
   <table class="table">
     <div>
       <div style='display: inline-block;'><input type='checkbox' class='master'></div>
-      <div class='head'>Name</div>
-      <div class='head'>Address</div>
-      <div class='head'>Email</div>
-      <div class='head'>Phonenumber</div>
+      <div class='head'><b>Name</b></div>
+      <div class='head'><b>Address</b></div>
+      <div class='head'><b>Email</b></div>
+      <div class='phone'><b>Phone</b></div>
+      <div class='small'><b>Action</b></div>
     </div>
   </table>
+  <hr>
   <div id="changeThis"></div>
 </div>
+<div class="edit">
+  <form id ="update"name="update" action="/update" method="post">
+    <input class="input2" type="text" name="firstName" placeholder="Firstname">
+    <input class="input2" type="text" name="lastName" placeholder="Lastname">
+    <input class="input2" type="text" name="address" placeholder="Address">
+    <input class="input2" type="text" name="email" placeholder="Email">
+    <input class="input2" type="text" name="phoneNumber" placeholder="Phonenumber">
+    <button  name="wait"> Update</button>
+  </form>
+</div>
 <hr>
+<div class="navigation">
+  <div style=" float:left;"><p style="margin-top:15px; margin-left:12px; color: white; font-size:20px" id="ptag"></p></div>
+  <button type="button" style="margin-right:12px;" id="button" class="next" onclick="loadDoc2(parseFloat(this.name)+1)">Next</button>
+  <button type="button" id="button" onclick="loadDoc2(this.textContent)">5</button>
+  <button type="button" id="button" onclick="loadDoc2(this.textContent)">4</button>
+  <button type="button" id="button" onclick="loadDoc2(this.textContent)">3</button>
+  <button type="button" id="button" onclick="loadDoc2(this.textContent)">2</button>
+  <button type="button" id="button" onclick="loadDoc2(this.textContent)">1</button>
+  <button type="button" id="button" class="previous" onclick="loadDoc2(this.name-1)">Previous</button>
+</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="script.JS"></script>

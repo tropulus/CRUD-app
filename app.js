@@ -47,12 +47,56 @@ app.post('/delete', (req,res) => {
   })};
 })
 
+app.post('/update2', (req, res) => {
+    let test = (Object.keys(req.body)[0].split(","))[0]; //number of button pressed
+    var q = "select firstName,lastName,address,email,phoneNumber from employees as test limit " + (test -1)*5 + ",5 ;"
+    connection.query(q, function (error, result, fields) {
+        if (error) throw error;
+
+        let answer = ""
+        answer += "<table class='table'>"
+        for (var item in result) {
+            answer += "<div class='row'>"
+            answer += "<div style='display: inline-block;'>"
+            answer += "<input type='checkbox' class='peasant table'></input>"
+            answer += "</div>"
+            answer += "<div class='block'>"
+            answer += "" + result[item].firstName + " " + result[item].lastName + ""
+            answer += "</div>"
+            answer += "<div class='block'>"
+            answer += "" + result[item].address + ""
+            answer += "</div>"
+            answer += "<div class='block'>"
+            answer += "" + result[item].email + ""
+            answer += "</div>"
+            answer += "<div class='phone'>"
+            answer += "" + result[item].phoneNumber + ""
+            answer += "</div>"
+            answer += "<div class='small'>"
+            answer += "<button onclick='edit(this)'>Edit</button>"
+            answer += "</div>"
+            answer += "</div>"
+        }
+        answer += "</table>"
+        res.send(answer)
+    })
+
+})
+
+app.post('/update', (req,res) => {
+  q = "UPDATE employees SET firstName = '" + req.body.firstName + "', lastName = '" + req.body.lastName + "', address = '" + req.body.email + "', phoneNumber = '" + req.body.phoneNumber + "'  where concat(firstName,' ',lastName) = '" + req.body.oldata + "' ;"
+  connection.query(q, function(error,result,fields){
+    if (error) throw error;
+  })
+  res.redirect('/')
+})
+
 app.post('/pingserver', (req,res)=>{
-  var q = "select firstName,lastName,address,email,phoneNumber from employees as test limit 3;"
+  var q = "select firstName,lastName,address,email,phoneNumber from employees as test limit 10;"
   connection.query(q, function(error,result,fields){
   if (error) throw error;
-
-
+        
+    
   let answer = ""
       answer += "<table class='table'>"
       for (var item in result) {
@@ -69,9 +113,12 @@ app.post('/pingserver', (req,res)=>{
       answer += "<div class='block'>"
       answer += "" + result[item].email + ""
       answer += "</div>"
-      answer += "<div class='block'>"
+      answer += "<div class='phone'>"
       answer += "" + result[item].phoneNumber + ""
-      answer += "</div class='block'>"
+      answer += "</div>"
+      answer += "<div class='small'>"
+      answer += "<button onclick='edit(this)'>Edit</button>"
+      answer += "</div>"
       answer += "</div>"
                 }
       answer += "</table>"

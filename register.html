@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 
-<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>register new employee</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-
-    <style>
-    body {padding: 50px}
-    input{
-      margin: 20px;
-    }
-    </style>
-<button onClick="window.location='index.html'">Back</button>
-    <form class="" action="/register" method="post">
+    <div class="wrapper">
+    <button onClick="window.location='index.html'">Back</button>
+    <form action="/register" method="post">
       <input class="input" type="text" name="firstName" placeholder="Firstname">
       <input class="input" type="text" name="lastName" placeholder="Lastname">
       <input class="input" type="text" name="email" placeholder="Email">
@@ -23,5 +17,6 @@
       <input class="input" type="text" name="phoneNumber" placeholder="Phonenumber">
       <button onClick="window.location='index.html'"> Register</button>
     </form>
+  </div>
   </body>
 </html>

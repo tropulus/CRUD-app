@@ -4,18 +4,48 @@
 }
 .head {
   display:inline-block;
-  width: 150px;
+  width: 245px;
   text-decoration-style: solid;
 }
 .block {
   display:inline-block;
-  width: 200px;
+  width: 250px;
+}
+.small {
+  display:inline-block;
 }
 body {
-  padding: 50px
+  padding: 50px;
 }
 .wrapper {
   margin-left: 400px;
   margin-right: 400px;
-
+}
+.phone {
+  display:inline-block;
+  width: 120px;
+}
+.row {
+  height: 30px;
+}
+.row:nth-child(2n-1) {
+  background: #f2f2f2;
+}
+.edit {
+  display:none;
+  margin-top: 10px;
+}
+.input2 {
+  width: 150px;
+}
+.navigation{
+  width:inherit;
+  height: 50px;
+  background: #435D7D;
+}
+#button {
+  float:right;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  height:60%;
 }
