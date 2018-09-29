@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CRUD App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+<button onClick="window.location='register.html';">Register New Employee</button>
+<button onclick="fireEmployee()">Fire employee</button>
+<h3>Employees</h3>
+<hr>
+<div>
+  <table class="table">
+    <div>
+      <div style='display: inline-block;'><input type='checkbox' class='master'></div>
+      <div class='head'>Name</div>
+      <div class='head'>Address</div>
+      <div class='head'>Email</div>
+      <div class='head'>Phonenumber</div>
+    </div>
+  </table>
+  <div id="changeThis"></div>
+</div>
+<hr>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="script.JS"></script>
+</body>
+</html>
