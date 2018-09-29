@@ -1,0 +1,21 @@
+.table {
+  /* width: 100%;
+  table-layout: left; */
+}
+.head {
+  display:inline-block;
+  width: 150px;
+  text-decoration-style: solid;
+}
+.block {
+  display:inline-block;
+  width: 200px;
+}
+body {
+  padding: 50px
+}
+.wrapper {
+  margin-left: 400px;
+  margin-right: 400px;
+
+}
